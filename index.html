@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Random Password Generator 12 Characters – Free Password Tool</title>
+  <meta name="description" content="Free random password generator with 8, 12, 15, and 20 character options, plus an easy-to-remember password generator. Fast, secure, simple, and mobile-friendly." />
+  <meta name="keywords" content="random password generator 12 characters, random password generator, password generator, strong password generator, easy to remember password generator, secure password tool" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://shahidlogs.github.io/random-password-generator-12-characters/" />
+
+  <meta property="og:title" content="Random Password Generator 12 Characters – Free Password Tool" />
+  <meta property="og:description" content="Generate random passwords with 8, 12, 15, and 20 character options, plus easy-to-remember passwords." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://shahidlogs.github.io/random-password-generator-12-characters/" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    .wrapper {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 20px 16px 40px;
+    }
+
+    .card {
+      background: #f8fafc;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      padding: 22px;
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1.2;
+      margin: 0 0 12px;
+      text-align: center;
+      color: #111827;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 0 auto 22px;
+      text-align: center;
+      font-size: 16px;
+      color: #4b5563;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .control-box {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .control-box label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #374151;
+    }
+
+    select, input[type="checkbox"] {
+      cursor: pointer;
+    }
+
+    select {
+      width: 100%;
+      border: 2px solid #d1d5db;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 15px;
+      background: #fff;
+      color: #111827;
+      outline: none;
+    }
+
+    select:focus {
+      border-color: #2563eb;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 8px;
+      font-size: 15px;
+      color: #111827;
+    }
+
+    .check-list label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    .password-box {
+      margin-bottom: 12px;
+    }
+
+    .password-output {
+      width: 100%;
+      min-height: 120px;
+      border: 2px solid #d1d5db;
+      border-radius: 14px;
+      background: #fff;
+      padding: 16px;
+      font-size: 22px;
+      line-height: 1.5;
+      color: #111827;
+      word-break: break-word;
+      display: flex;
+      align-items: center;
+    }
+
+    .password-output.active {
+      border-color: #2563eb;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    button {
+      border: none;
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      opacity: 0.95;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: #ffffff;
+    }
+
+    .btn-secondary {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    .tips {
+      margin-top: 22px;
+      font-size: 15px;
+      color: #4b5563;
+    }
+
+    .tips h2 {
+      font-size: 22px;
+      margin: 0 0 10px;
+      color: #111827;
+    }
+
+    .tips p {
+      margin: 0 0 12px;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    @media (max-width: 700px) {
+      .wrapper {
+        padding: 14px 12px 28px;
+      }
+
+      .card {
+        padding: 16px;
+        border-radius: 14px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .intro {
+        font-size: 15px;
+      }
+
+      .controls {
+        grid-template-columns: 1fr;
+      }
+
+      .password-output {
+        font-size: 19px;
+        min-height: 110px;
+      }
+
+      button {
+        width: auto;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Random Password Generator 12 Characters",
+    "url": "https://shahidlogs.github.io/random-password-generator-12-characters/",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "Any",
+    "description": "Free random password generator with 8, 12, 15, and 20 character options, plus an easy-to-remember password generator."
+  }
+  </script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <h1>Random Password Generator 12 Characters</h1>
+
+      <p class="intro">
+        Generate strong random passwords instantly with 8, 12, 15, and 20 character options. You can also create an easy-to-remember password for everyday use.
+      </p>
+
+      <div class="controls">
+        <div class="control-box">
+          <label for="length">Password Length</label>
+          <select id="length">
+            <option value="8">8 Characters</option>
+            <option value="12" selected>12 Characters</option>
+            <option value="15">15 Characters</option>
+            <option value="20">20 Characters</option>
+          </select>
+        </div>
+
+        <div class="control-box">
+          <label>Password Type</label>
+          <div class="check-list">
+            <label><input type="checkbox" id="uppercase" checked> Uppercase Letters</label>
+            <label><input type="checkbox" id="lowercase" checked> Lowercase Letters</label>
+            <label><input type="checkbox" id="numbers" checked> Numbers</label>
+            <label><input type="checkbox" id="symbols"> Symbols</label>
+            <label><input type="checkbox" id="easyRemember"> Easy to Remember</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="password-box">
+        <div class="password-output" id="passwordOutput">Click “Generate Password”</div>
+      </div>
+
+      <div class="actions">
+        <button class="btn-primary" id="generateBtn">Generate Password</button>
+        <button class="btn-secondary" id="copyBtn">Copy Password</button>
+      </div>
+
+      <div class="tips">
+        <h2>Free and Simple Password Generator</h2>
+        <p>
+          This free password generator helps you create strong random passwords for websites, apps, email accounts, and online tools. Choose from 8, 12, 15, or 20 characters depending on your needs.
+        </p>
+        <p>
+          You can generate secure passwords with letters, numbers, and symbols, or create an easy-to-remember password when you need something simpler and more user-friendly.
+        </p>
+      </div>
+
+      <div class="footer-note">
+        Fast, secure, simple, and mobile-friendly password generator.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const lengthSelect = document.getElementById("length");
+    const uppercase = document.getElementById("uppercase");
+    const lowercase = document.getElementById("lowercase");
+    const numbers = document.getElementById("numbers");
+    const symbols = document.getElementById("symbols");
+    const easyRemember = document.getElementById("easyRemember");
+    const passwordOutput = document.getElementById("passwordOutput");
+    const generateBtn = document.getElementById("generateBtn");
+    const copyBtn = document.getElementById("copyBtn");
+
+    const upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const lowerChars = "abcdefghijklmnopqrstuvwxyz";
+    const numberChars = "0123456789";
+    const symbolChars = "!@#$%^&*()_+-=[]{}|;:,.<>?";
+
+    const easyWords = [
+      "Sunny", "River", "Tiger", "Apple", "Rocket", "Garden", "Planet", "Silver",
+      "Cloud", "Forest", "Ocean", "Mango", "Falcon", "Winter", "Summer", "Candle"
+    ];
+
+    function getRandomChar(str) {
+      return str[Math.floor(Math.random() * str.length)];
+    }
+
+    function generateEasyPassword(length) {
+      let word1 = easyWords[Math.floor(Math.random() * easyWords.length)];
+      let word2 = easyWords[Math.floor(Math.random() * easyWords.length)];
+      let digits = Math.floor(10 + Math.random() * 90).toString();
+      let combined = word1 + word2 + digits;
+
+      if (combined.length > length) {
+        combined = combined.slice(0, length);
+      }
+
+      while (combined.length < length) {
+        combined += getRandomChar(numberChars);
+      }
+
+      return combined;
+    }
+
+    function generatePassword() {
+      const length = parseInt(lengthSelect.value, 10);
+
+      if (easyRemember.checked) {
+        const easyPass = generateEasyPassword(length);
+        passwordOutput.textContent = easyPass;
+        passwordOutput.classList.add("active");
+        return;
+      }
+
+      let charset = "";
+
+      if (uppercase.checked) charset += upperChars;
+      if (lowercase.checked) charset += lowerChars;
+      if (numbers.checked) charset += numberChars;
+      if (symbols.checked) charset += symbolChars;
+
+      if (!charset) {
+        passwordOutput.textContent = "Please select at least one option.";
+        passwordOutput.classList.add("active");
+        return;
+      }
+
+      let password = "";
+      for (let i = 0; i < length; i++) {
+        password += getRandomChar(charset);
+      }
+
+      passwordOutput.textContent = password;
+      passwordOutput.classList.add("active");
+    }
+
+    generateBtn.addEventListener("click", generatePassword);
+
+    copyBtn.addEventListener("click", async function () {
+      const password = passwordOutput.textContent;
+
+      if (!password || password === "Click “Generate Password”" || password === "Please select at least one option.") {
+        return;
+      }
+
+      try {
+        await navigator.clipboard.writeText(password);
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => {
+          copyBtn.textContent = "Copy Password";
+        }, 1200);
+      } catch (error) {
+        copyBtn.textContent = "Copy Failed";
+        setTimeout(() => {
+          copyBtn.textContent = "Copy Password";
+        }, 1200);
+      }
+    });
+
+    easyRemember.addEventListener("change", function () {
+      if (easyRemember.checked) {
+        symbols.checked = false;
+      }
+    });
+
+    generatePassword();
+  </script>
+</body>
+</html>
